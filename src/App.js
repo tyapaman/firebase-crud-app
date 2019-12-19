@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 
 class App extends Component {
   render() {
+//    return React.createElement(
+//        "h1",
+//        null,
+//        "hello,world!!"
+//      );
     return (
-      <div>
-          <h1>Welcome to Hello World</h1>
-      </div>
+      <h1>hello,world!</h1>
     );
   }
 }
