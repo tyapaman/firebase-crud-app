@@ -1,5 +1,7 @@
 //jsxを使用する場合はReactは必要
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
 //関数コンポーネント,引数にpropsを受け取る
 const User = (props) =>{
@@ -14,11 +16,19 @@ const User = (props) =>{
   );
 }
 
+//コンポーネントのpropsに対する型を定義
+//Userの後である必要がある
+User.propTypes = {
+  name:PropTypes.string,
+  //isRequiredは値が必ず存在していないといけない
+  age:PropTypes.number.isRequired
+}
+
 //関数コンポーネント
 const App = () =>{
   const profiles =[
     { name:"bob", age:10},
-    { name:"hanako", age:12},
+    { name:"hanako", age:"12"},
     { name:"kato"}
   ]
   return (
@@ -35,10 +45,6 @@ const App = () =>{
   );
 }
 
-//defaultpropsで初期値を設定できる
-User.defaultProps={
-  age:1
-}
 
 
 export default App;
