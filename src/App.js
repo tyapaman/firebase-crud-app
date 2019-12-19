@@ -1,36 +1,44 @@
 //jsxを使用する場合はReactは必要
 import React, { Component } from 'react';
 
-//Classコンポーネント
-//class App extends Component {
-//  render() {
-//    return (
-//      // React.Fragmentで余計なタグを出力せずに済む
-//      <React.Fragment>
-//        {/* htmlForはラベルとフォームパーツの関連づけ */}
-//        <label htmlFor="name">名前</label>
-//        <input id="name" type="text" onChange={(event)=>{console.log(event.target.value)}}/>
-//      </React.Fragment>
-//    );
-//  }
-//}
-
-//関数コンポーネント
-const Cat = () =>{
-  return <div>にゃー</div>
+//関数コンポーネント,引数にpropsを受け取る
+const User = (props) =>{
+  // (はreturnのすぐ後にないとダメ！改行するとエラ-
+  return (
+    <div>
+      {/* propsを受け取る */}
+      I am {props.name}!<br/>
+      I am {props.age} years old!<br/>
+      <br/>
+    </div>
+  );
 }
 
 //関数コンポーネント
 const App = () =>{
+  const profiles =[
+    { name:"bob", age:10},
+    { name:"hanako", age:12},
+    { name:"kato"}
+  ]
   return (
   <React.Fragment>
-    <Cat />
-    <Cat />
-    <Cat />
-    <Cat />
-    <Cat />
+    {/* Userコンポーネントにたいしてpropsを渡せる */}
+    {
+     profiles.map((profile,index)=>{
+        //<User>の中はJSXでJSX内の{}はjavascript
+        //props名を定義しコンポーネントにpropsを渡している
+        return <User name={profile.name} age={profile.age} key={index} />;
+      })
+    }
   </React.Fragment>
   );
 }
+
+//defaultpropsで初期値を設定できる
+User.defaultProps={
+  age:1
+}
+
 
 export default App;
