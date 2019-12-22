@@ -1,7 +1,6 @@
 //jsxを使用する場合はReactは必要
 import React, { Component } from 'react';
 
-
 //関数コンポーネント,引数にpropsを受け取る
 class Counter extends Component{
   constructor(props){
