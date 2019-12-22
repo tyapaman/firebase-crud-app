@@ -6,14 +6,14 @@ import { Provider } from 'react-redux';
 import reducer from './reducers';
 
 import './index.css';
-import App from './components/App';
+import Counter from './components/Counter';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(reducer);
 
 ReactDOM.render(
 <Provider store={store}>
-<App />
+<Counter />
 </Provider>
 , document.getElementById('root'));
 registerServiceWorker();
