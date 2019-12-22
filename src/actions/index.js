@@ -1,3 +1,4 @@
+//actionのタイプを指定する
 export const actionsType={
   INCREMENT:'INCREMENT',
   DECREMENT:'DECREMENT'
