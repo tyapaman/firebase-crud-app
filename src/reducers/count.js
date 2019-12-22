@@ -1,5 +1,5 @@
 //reducerの状態を記述
-import { actionsType } from './index';
+import { actionsType } from '../actions';
 
 const initialState = { value:0 }
 
