@@ -1,6 +1,7 @@
 //reducerの状態を記述
 import { actionsType } from '../actions';
 
+//stateの定義
 const initialState = { value:0 }
 
 export default (state=initialState, action) =>{
