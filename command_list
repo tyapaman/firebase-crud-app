@@ -11,5 +11,9 @@ create-react-app --scripts-version 1.1.1 ../udemy-hum-app/
 yarn run start
 
 //ここからredux
+yarn add redux react-redux
 
- yarn add redux react-redux
+//crudapp
+yarn add axios
+//reduxのaction createrで非同期処理
+yarn add redux-thunk

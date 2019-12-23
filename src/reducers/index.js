@@ -1,7 +1,7 @@
 //全reducerを結合する
 //今回はcount reducerのみ
 import { combineReducers } from 'redux';
-import count from './count';
+import events from './events';
 
 //{count:count}
-export default combineReducers({count});
+export default combineReducers({events});
