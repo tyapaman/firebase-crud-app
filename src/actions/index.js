@@ -2,7 +2,8 @@ import axious from 'axios';
 
 //actionのタイプを指定する
 export const actionsType={
-  READ_EVENTS:'READ_EVENTS'
+  READ_EVENTS:'READ_EVENTS',
+  CREATE_EVENT:'CREATE_EVENT'
 }
 
 const ROOT_URL = 'https://udemy-utils.herokuapp.com/api/v1';
@@ -17,4 +18,10 @@ export const readEvents = () => async dispatch => {
       //dispatchを実行するとreducerが実行される
       //actionとresponseをreducerに渡している
       dispatch({type: actionsType.READ_EVENTS, response});
+};
+
+
+export const postEvent = values => async dispatch => {
+      const response = await axious.post(`${ROOT_URL}/events${QUERYSTRING}`,values)
+      dispatch({type: actionsType.CREATE_EVENT, response});
 };

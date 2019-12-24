@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { readEvents } from '../actions/index'
 import _ from 'lodash';
+import { Link } from 'react-router-dom';
 
 //関数コンポーネント,引数にpropsを受け取る
 class EventsIndex extends Component{
@@ -24,20 +25,24 @@ class EventsIndex extends Component{
   render(){
     //インスタンスのpropsには状態やアクションを渡す
     return (
-      <table>
-        {/* reducer内のcount.jsのvalueの値 */}
-        {/* stateのvalueがCounterコンポーネントに渡ってくる際のインターフェースがprops（読み取り専用） */}
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Body</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.renderEvents()}
-          </tbody>
-        </table>
+      <React.Fragment>
+        <table>
+          {/* reducer内のcount.jsのvalueの値 */}
+          {/* stateのvalueがCounterコンポーネントに渡ってくる際のインターフェースがprops（読み取り専用） */}
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.renderEvents()}
+            </tbody>
+          </table>
+  
+          <Link to="/events/new">New Event</Link>
+      </React.Fragment>
     );
   }
 }
