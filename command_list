@@ -20,3 +20,5 @@ yarn add redux-thunk
 
 yarn add react-router-dom
 yarn add redux-form
+
+yarn add material-ui@0.20.0
