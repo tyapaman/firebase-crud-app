@@ -31,7 +31,7 @@ export const postEvent = values => async dispatch => {
 export const deleteEvent = id => async dispatch => {
       const response = await axious.delete(`${ROOT_URL}/events/${id}${QUERYSTRING}`)
       //reducerにidを渡す
-      dispatch({type: actionsType.DELETE_EVENT, id});
+      dispatch({type: actionsType.DELETE_EVENT, response});
 };
 
 export const getEvent = id => async dispatch => {
