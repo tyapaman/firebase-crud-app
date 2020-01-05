@@ -17,10 +17,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const enhancer = process.env.NODE_ENV === 'development' ?
     composeWithDevTools(applyMiddleware(thunk)):applyMiddleware(thunk);
+
+//storeの作成
 const store = createStore(reducer,enhancer);
 
 ReactDOM.render(
 <MuiThemeProvider>
+{/* 全てのコンポーネントでstoreを使用できるようにする */}
 <Provider store={store}>
   <BrowserRouter>
   <Switch>

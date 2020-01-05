@@ -2,6 +2,8 @@
 import { actionsType } from '../actions';
 import _ from 'lodash';
 
+//reducerは(state, action)ととり、stateをどう変化させるかを記述する
+//今回はstate=events
 export default (events={}, action) =>{
   switch(action.type){
     case actionsType.UPDATE_EVENT:

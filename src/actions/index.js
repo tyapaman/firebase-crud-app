@@ -1,5 +1,7 @@
 import axious from 'axios';
 
+//actionではtypeとdataをreducerに渡す
+
 //actionのタイプを指定する
 export const actionsType={
   READ_EVENTS:'READ_EVENTS',
