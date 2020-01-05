@@ -17,7 +17,9 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 
 //関数コンポーネント,引数にpropsを受け取る
 class EventsIndex extends Component{
+  //componentの初期マウント時にが外部のAPIに取得しに行く
   componentDidMount(){
+    //処理はactionに記述するため、propsに渡し、mapDispatchToPropsでmappingする
     this.props.readEvents()
   }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+//axiousを使用するためのもの
 import thunk from 'redux-thunk'
 
 import reducer from './reducers';
@@ -15,6 +16,7 @@ import EventsShow from './components/events_show';
 import registerServiceWorker from './registerServiceWorker';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+//axiousを使用するためのもの
 const enhancer = process.env.NODE_ENV === 'development' ?
     composeWithDevTools(applyMiddleware(thunk)):applyMiddleware(thunk);
 
